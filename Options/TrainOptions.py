@@ -1,6 +1,6 @@
 from Options.BaseOptions import BaseOptions
 
-class TrainParser(BaseOptions):
+class TrainOption(BaseOptions):
     def initialize(self):
         BaseOptions.initialize(self)
         self.parser.add_argument('--lr', default=0.0001, type=float)
