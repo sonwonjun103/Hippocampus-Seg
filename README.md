@@ -1,13 +1,14 @@
-# Hippocampus-Seg
+# CT-Based Hippocampus Segmentation with DualDecoder Network (HDD-Net)
 
 [![MICCAI 2025](https://img.shields.io/badge/MICCAI-2025%20Accepted-blue)](#)
 [![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB)](#)
 [![PyTorch](https://img.shields.io/badge/PyTorch-3D%20Segmentation-EE4C2C)](#)
 
-Official research code for hippocampus segmentation in CT volumes. This project
-implements a 3D U-Net style segmentation framework with auxiliary edge
-supervision and residual channel-attention modules for structure-aware
-hippocampal mask prediction.
+Official research code for **CT-Based Hippocampus Segmentation with
+DualDecoder Network (HDD-Net)**. This project implements a 3D CT hippocampus
+segmentation framework with dual decoder branches, auxiliary edge supervision,
+and residual channel-attention modules for structure-aware hippocampal mask
+prediction.
 
 > Accepted to **MICCAI 2025**.
 
@@ -50,12 +51,12 @@ hippocampal mask prediction.
 
 ## Method Summary
 
-The default model in `models/moduleRCA.py` is a 3D encoder-decoder architecture
-for binary hippocampus segmentation. It combines:
+The default model in `models/moduleRCA.py` implements HDD-Net, a 3D
+encoder-decoder architecture for binary hippocampus segmentation. It combines:
 
 - residual feature paths for stable volumetric encoding
 - channel attention blocks to recalibrate anatomical features
-- a segmentation decoder and an auxiliary edge decoder
+- a dual-decoder design with segmentation and auxiliary edge branches
 - boundary-guided loss terms to encourage sharper hippocampal contours
 
 During training, the model predicts both the hippocampus mask and an edge map.
@@ -200,17 +201,18 @@ random seeds. The default seed is:
   layout.
 - Raw medical images, generated Excel split files, checkpoints, and prediction
   outputs should not be committed to git.
-- The public README will be updated with the final paper title, citation, and
-  pretrained weights when they are ready for release.
+- The public README will be updated with author information, proceedings
+  metadata, and pretrained weights when they are ready for release.
 
 ## Citation
 
 If this code is useful for your research, please cite our MICCAI 2025 paper.
-The BibTeX entry will be added after the proceedings metadata is available.
+Author and proceedings metadata will be added once the final citation is
+available.
 
 ```bibtex
 @inproceedings{hippocampus_seg_2025,
-  title     = {TBA},
+  title     = {CT-Based Hippocampus Segmentation with DualDecoder Network (HDD-Net)},
   author    = {TBA},
   booktitle = {International Conference on Medical Image Computing and Computer-Assisted Intervention},
   year      = {2025}
